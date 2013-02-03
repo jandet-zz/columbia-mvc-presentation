@@ -1,0 +1,9 @@
+.reveal section img.no-style {
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.reveal strong {
+  color: #FF5E99;
+}

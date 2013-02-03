@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>So, how the hell do I build this Web App?</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="css/janessa.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section>
+          <h1>So, how the hell do I build this Web App?</h1>
+          <h3>MVC-Driven Web Development &amp; Frameworks</h3>
+          <p>
+            <small>Janessa Det / Web Team <a href="http://twitter.com/jandet">@TwitterNYC</a> / Follow Me: <a href="http://twitter.com/jandet">@jandet</a></small>
+          </p>
+        </section>
+
+        <section>
+          <h1>Who am I?</h1>
+          <p>
+            <h3><a href="http://twitter.com/TwitterNYC">@TwitterNYC</a></h3>
+            Software Engineer - Web<br>
+            <small>Discover Web Front-End</small>
+          </p>
+          <p>
+            <h3><a href="http://thefuture.fm">TheFuture.FM</a></h3>
+            Lead Front-End Dev<br>
+            <small>DJ Defined Radio</small>
+          </p>
+          <p>
+            <h3>Columbia University</h3>
+            M.S. Computer Science<br>
+            <small>Graphics &amp; Vision > UX/HCI</small>
+          </p>
+
+          <aside class="notes">
+            Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+          </aside>
+        </section>
+
+        <section>
+          <h1>MV-What?</h1>
+        </section>
+
+        <section>
+          <section>
+            <h1>MVC</h1>
+            <img src="images/MVC.png">
+            <h3>Model</h3>
+            <ul>
+              <li>Represents state of data</li>
+              <li>Notifies View and Controller<br>when state changes</li>
+            </ul>
+          </section>
+          <section>
+            <h1>MVC</h1>
+            <img src="images/MVC.png">
+            <h3>View</h3>
+            <ul>
+              <li>Displays state of the model to User</li>
+              <li>Receives input from User to manipulate model</li>
+            </ul>
+          </section>
+          <section>
+            <h1>MVC</h1>
+            <img src="images/MVC.png">
+            <h3>Controller</h3>
+            <ul>
+              <li>Interfaces with the actual data</li>
+              <li>Receives update notifications from model to write back</li>
+              <li>Pushes udpates to the model when data changes</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>MVP</h1>
+            <img src="images/MVP.png">
+            <h3>Model</h3>
+            <ul>
+              <li>Represents state of data</li>
+              <li>Listens for changes from Presenter</li>
+              <li>Handles writeback and update of Model data</li>
+            </ul>
+          </section>
+          <section>
+            <h1>MVP</h1>
+            <img src="images/MVP.png">
+            <h3>View</h3>
+            <ul>
+              <li>Passive representation of state of model</li>
+              <li>Receives input from User to manipulate model</li>
+            </ul>
+          </section>
+          <section>
+            <h1>MVP</h1>
+            <img src="images/MVP.png">
+            <h3>Presenter</h3>
+            <ul>
+              <li>Drives changes to Model</li>
+              <li>Formats Model data for presentation in the view</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h1>MVVM</h1>
+          <img src="images/MVVM.png">
+          <p><strong>Model:</strong> Represents state of data</p>
+          <p><strong>View:</strong> Passive representation of state of model</p>
+          <p><strong>View Model:</strong> Specialized Presenter</p>
+        </section>
+
+        <section>
+          <h2>But what are they really?</h2>
+          <h1 class="fragment">MV*</h1>
+          <h1 class="fragment">MVW</h1>
+        </section>
+
+        <section>
+          <section>
+            <img src="images/backbone.png" class="no-style"><br>
+            <a href="http://backbonejs.org">backbonejs.org</a><br><br>
+            
+            <p>Gives structure to web applications by providing:</p><br>
+            <ul>
+              <li class="fragment"><strong>models</strong> with key-value binding and custom events,</li>
+              <li class="fragment"><strong>collections</strong> with a rich API of enumerable functions,</li>
+              <li class="fragment"><strong>views</strong> with declarative event handling,</li>
+            </ul>
+            <br><br>
+            <p class="fragment">and connects it all to your existing API over a RESTful JSON interface.</p>
+          </section>
+          <section>
+            <h2>Backbone.JS: Components</h2>
+
+            <img src="images/backbonemvp.png">
+            <ul>
+              <li class="fragment"><strong>Backbone.Model</strong> Represents your data, interfaces with data store</li>
+              <li class="fragment"><strong>Backbone.Collection</strong> A collection of Models</li>
+              <li class="fragment"><strong>Backbone.View</strong> Listens for model data, formats for Template rendering</li>
+              <li class="fragment"><strong>Backbone.Router</strong> Routes URLs to what should happen</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Backbone.JS: Event Handling</h2>
+
+            All of these components communicate via <strong>Events</strong>.<br>
+            Models &amp; Collections trigger events which<br>Views can bind to.<br><br>
+
+            <h3 class="fragment">Collection</h3>
+            <p class="fragment"><strong>reset</strong> (collection)</p>
+            <p class="fragment"><strong>add</strong> (model, collection)</p>
+            <p class="fragment"><strong>remove</strong> (model, collection)</p>
+            <br>
+            <h3 class="fragment">Model</h3>
+            <p class="fragment"><strong>change</strong> (model)</p>
+            <p class="fragment"><strong>change:attribute</strong> (model, value)</p>
+          </section>
+          <section>
+            <h2>Backbone.Model</h2>
+
+            <pre><code>
+var Puppy = Backbone.Model.extend({
+  defaults: {
+    weight: 10
+  },
+
+  eatFood: function() {
+    var currentWeight = this.get("weight");
+    this.set({weight: currentWeight + 5});
+  }
+});
+
+var george = new Puppy({id: 1, name: "George"});
+george.eatFood();
+
+george.save();
+            </code></pre>
+          </section>
+          <section>
+            <h2>Backbone.Collection</h2>
+
+            <pre><code>
+var PuppyLitter = Backbone.Collection.extend({
+  urlRoot: 'api/v1/puppies',
+  model: Puppy
+});
+
+var puppies = new PuppyLitter();
+
+puppies.add(george);
+puppies.add(spot);
+puppies.add(bob);
+
+/* alternatively */
+var initializedPuppies = new PuppyLitter([george, spot, bob]);
+            </code></pre>
+            <p class="fragment"><a href="http://underscorejs.org/">Underscore.js</a></p>
+            <p class="fragment">collection <strong>fetch</strong> performs GET on urlRoot endpoint</p>
+            <p class="fragment">model <strong>fetch</strong> performs GET on endpoint urlRoot + model.id</p>
+          </section>
+          <section>
+            <h2>Backbone.View</h2>
+
+            <pre><code>
+var PuppyRepresentation = Backbone.View.extend({
+
+  template: ...,
+  tagName: "div",
+  className: "puppy-style",
+
+  events: {
+    "click .tail":    "wag",
+    "click .bowl.":   "feed"
+  },
+
+  initialize: function() {
+    this.listenTo(this.model, "change", this.render);
+    // equivalent to
+    this.model.on("change", this.render);
+  },
+
+  feed: function() {
+    this.model.eatFood();
+  },
+
+  wag: function() { ... },
+
+  render: function() {
+    this.$el.html(this.template(this.model.attributes));
+    return this;
+  }
+
+});
+            </pre></code>
+
+            <ol>
+              <li class="fragment">Collection view instantiated with collection</li>
+              <li class="fragment">Collection view fetches, cycles through retrieved models, and instantiates model views for them</li>
+              <li class="fragment">Collection view calls render on each model view and appends to its associated container/element</li>
+            </ol>
+          </section>
+          <section>
+            <h2>Backbone.Router</h2>
+
+            <pre><code>
+  var myRouter = Backbone.Router.extend({
+    routes: {
+      "/":                      "home",
+      "/djs/:permalink":        "djs",
+      "/djs/:permalink/:mixid": "djs"
+    },
+
+    home: function() { ... },
+    djs: function(permalink, mixid) { ... }
+  });
+
+  // To start tracking hashchanges
+  Backbone.history.start();
+            </pre></code>
+
+            <ul>
+              <li><strong>Defines URL routes</strong> and what we should do for each.</li>
+              <li><strong>Single Page app:</strong> loads master template,<br>manipulating content with JS.</li>
+              <li><strong>Note:</strong> Does support pushState</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2><a href="http://emberjs.com">Ember.js</a></h2>
+          <h2><a href="http://angularjs.org">Angular.js</a></h2>
+          <h2><a href="http://knockoutjs.com">Knockout.js</a></h2><br>
+          
+          <a href="http://todomvc.com/">TODOMVC</a>
+        </section>
+
+        <section>
+          <h2>Templating Libraries</h2>
+
+          <h3><a href="http://mustache.github.com/">Mustache</a></h3>
+          <h3><a href="http://handlebarsjs.com/">Handlebars</a></h3>
+          <h3><a href="https://code.google.com/p/trimpath/wiki/JavaScriptTemplates">JST</a></h3>
+        </section>
+
+        <section>
+          <h1>Questions?</h1>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
